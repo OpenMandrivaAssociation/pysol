@@ -15,7 +15,6 @@ Source2:	%name-%version-src.tar.bz2
 #gw use the pysol.py from the source release instead of the bytecode
 Patch:		pysol-4.81-srcrelease.patch
 Patch1:		pysol-4.82-sound.patch
-BuildRoot:	%_tmppath/%name-%version-%release-root
 Requires:	tkinter >= 1.5.2
 BuildRequires:  python-devel >= %{py_ver}
 BuildRequires:  smpeg-devel
