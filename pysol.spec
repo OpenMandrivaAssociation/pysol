@@ -61,10 +61,6 @@ EOF
 chmod 755 $RPM_BUILD_ROOT/%_gamesbindir/pysol
 
 # Menu support
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%{name}): needs=x11 section=More Applications/Games/Cards title=PySOL command=%_gamesbindir/pysol icon="cards_section.png" longtitle="All solitaire cards games" xdg="true"
-EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -88,7 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesbindir}/pysol
 %{_mandir}/man6/pysol.6*
 %_datadir/applications/mandriva*
-%{_menudir}/*
 %{py_platsitedir}/*
 
 %post
