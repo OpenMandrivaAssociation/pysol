@@ -1,10 +1,9 @@
 %define	pssver	3.01
-%define	py_ver	%pyver
 
 Summary:	PySol provides several solitaire card games
 Name:		pysol
 Version:        4.82
-Release:        %mkrel 9
+Release:        %mkrel 10
 License:	GPL
 Group:		Games/Cards
 URL:		http://www.oberhumer.com/opensource/pysol/
@@ -17,7 +16,7 @@ Patch:		pysol-4.81-srcrelease.patch
 Patch1:		pysol-4.82-sound.patch
 BuildRoot:	%_tmppath/%name-%version-%release-root
 Requires:	tkinter >= 1.5.2
-BuildRequires:  python-devel >= %{py_ver}
+%py_requires -d
 BuildRequires:  smpeg-devel
 
 %description
