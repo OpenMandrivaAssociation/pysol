@@ -41,27 +41,27 @@ cd pysol-sound-server-%pssver/src
 
 %install
 rm -fr %buildroot
-make prefix=%_prefix bindir=%buildroot%_gamesbindir pkgdatadir=%buildroot%_gamesdatadir/%name install-bin install-data install-man mandir=$RPM_BUILD_ROOT/%{_mandir}
-perl -pi -e "s%$RPM_BUILD_ROOT/usr%/usr%" $RPM_BUILD_ROOT%_gamesbindir/pysol
+make prefix=%_prefix bindir=%buildroot%_gamesbindir pkgdatadir=%buildroot%_gamesdatadir/%name install-bin install-data install-man mandir=%{buildroot}/%{_mandir}
+perl -pi -e "s%%{buildroot}/usr%/usr%" %{buildroot}%_gamesbindir/pysol
 cd pysol-sound-server-%pssver/src
-python setup.py install --root=$RPM_BUILD_ROOT
+python setup.py install --root=%{buildroot}
 cd ../..
 # they don't support python 2.4 yet
 rm -f %buildroot%_gamesdatadir/%name/*pyc
 mkdir %buildroot%_gamesdatadir/%name/BINARIES
 cp -r %name-%version/src/* %buildroot%_gamesdatadir/%name/BINARIES
-cat > $RPM_BUILD_ROOT/%_gamesbindir/pysol << EOF
+cat > %{buildroot}/%_gamesbindir/pysol << EOF
 #!/bin/sh
 exec python %_gamesdatadir/%name/BINARIES/pysol.py --pkgdatadir=%_gamesdatadir/%name/ --bindir=%_gamesdatadir/%name/BINARIES/ ${1+"$@"}
 
 echo "$0: running $PYTHON failed !"
 exit 1
 EOF
-chmod 755 $RPM_BUILD_ROOT/%_gamesbindir/pysol
+chmod 755 %{buildroot}/%_gamesbindir/pysol
 
 # Menu support
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=PySOL
 Comment=All solitaire cards games
@@ -74,7 +74,7 @@ Categories=X-MandrivaLinux-MoreApplications-Games-Cards;Game;CardGame;
 EOF
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-, root,root)
