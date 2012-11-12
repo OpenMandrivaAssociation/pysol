@@ -1,0 +1,11 @@
+--- pysol-4.81/pysol~	2002-06-24 18:01:30.000000000 +0200
++++ pysol-4.81/pysol	2003-08-25 12:10:28.000000000 +0200
+@@ -67,7 +67,7 @@
+ bindir=`echo "$0" | sed -e 's|[^/][^/]*$||'`
+ bindir=`cd "$bindir" && pwd`
+ 
+-f="pysol_$PYVER.pyc"
++f="pysol.py"
+ 
+ # try script directory unless installed
+ if test ! -f "$dir/$f"; then
