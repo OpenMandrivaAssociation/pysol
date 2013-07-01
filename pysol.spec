@@ -1,6 +1,6 @@
 %define	pssver	3.01
 
-Summary:	PySol provides several solitaire card games
+Summary:	Provides several solitaire card games
 Name:		pysol
 Version:        4.82
 Release:        %mkrel 14
