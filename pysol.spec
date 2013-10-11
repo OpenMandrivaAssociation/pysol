@@ -29,11 +29,11 @@ Contains: klondike, freecel, spider, golf, etc.
 %patch -p1
 %patch1
 
-cp pysol-sound-server-%{_pssver}/NEWS NEWS.pysol-sound-server
-cp pysol-sound-server-%{_pssver}/README README.pysol-sound-server
+cp pysol-sound-server-%{pssver}/NEWS NEWS.pysol-sound-server
+cp pysol-sound-server-%{pssver}/README README.pysol-sound-server
 
 %build
-cd pysol-sound-server-%{_pssver}/src
+cd pysol-sound-server-%{pssver}/src
 ./configure --libdir=%{_libdir}
 %make
 
@@ -42,7 +42,7 @@ cd pysol-sound-server-%{_pssver}/src
 rm -fr %{buildroot}
 make prefix=%_prefix bindir=%{buildroot}%{_gamesbindir} pkgdatadir=%{buildroot}%{_gamesdatadir}/%{name} install-bin install-data install-man mandir=%{buildroot}/%{_mandir}
 perl -pi -e "s%%{buildroot}/usr%/usr%" %{buildroot}%{_gamesbindir}/pysol
-cd pysol-sound-server-%{_pssver}/src
+cd pysol-sound-server-%{pssver}/src
 python setup.py install --root=%{buildroot}
 cd ../..
 # they don't support python 2.4 yet
