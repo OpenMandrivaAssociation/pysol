@@ -1,0 +1,18 @@
+diff -Naur pysol-4.82.orig/src/tk/statusbar.py pysol-4.82/src/tk/statusbar.py
+--- pysol-4.82.orig/src/tk/statusbar.py	2013-10-21 14:25:24.815252881 +0400
++++ pysol-4.82/src/tk/statusbar.py	2013-10-21 14:25:36.776773128 +0400
+@@ -147,10 +147,10 @@
+         l = self._createLabel("info", fill=Tkinter.X, expand=0)
+         ## FIXME: justify ?
+         l.config(text="", justify="left")
+-        self._widgets[0].grid_configure(column=0, row=0, sticky="ew")
+-        self._widgets[1].grid_configure(column=1, row=0, sticky="ew")
+-        self._widgets[2].grid_configure(column=2, row=0, sticky="ew")
+-        self._widgets[3].grid_configure(column=3, row=0, sticky="ew")
++#        self._widgets[0].grid_configure(column=0, row=0, sticky="ew")
++#        self._widgets[1].grid_configure(column=1, row=0, sticky="ew")
++#        self._widgets[2].grid_configure(column=2, row=0, sticky="ew")
++#        self._widgets[3].grid_configure(column=3, row=0, sticky="ew")
+         self.frame.grid_columnconfigure(0, weight=0, minsize=100)
+         self.frame.grid_columnconfigure(1, weight=0, minsize=200)
+         self.frame.grid_columnconfigure(2, weight=0, minsize=100)

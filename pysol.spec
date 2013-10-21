@@ -3,7 +3,7 @@
 Summary:	Provides several solitaire card games
 Name:		pysol
 Version:        4.82
-Release:        16
+Release:        17
 License:	GPL
 Group:		Games/Cards
 URL:		http://www.oberhumer.com/opensource/pysol/
@@ -12,8 +12,9 @@ Source0:	%{name}-%{version}.tar.bz2
 Source1: 	http://www.oberhumer.com/opensource/pysol/download/pysol-sound-server-%{pssver}.tar.bz2
 Source2:	%{name}-%{version}-src.tar.bz2
 #gw use the pysol.py from the source release instead of the bytecode
-Patch:		pysol-4.81-srcrelease.patch
+Patch0:		pysol-4.81-srcrelease.patch
 Patch1:		pysol-4.82-sound.patch
+Patch2:		pysol-4.82-tk-geometry-fix.patch
 Requires:	tkinter >= 1.5.2
 BuildRequires:  python-devel
 BuildRequires:  smpeg-devel
@@ -26,8 +27,9 @@ Contains: klondike, freecel, spider, golf, etc.
 
 %prep
 %setup -q -a 1 -a 2
-%patch -p1
+%patch0 -p1
 %patch1
+%patch2
 
 cp pysol-sound-server-%{pssver}/NEWS NEWS.pysol-sound-server
 cp pysol-sound-server-%{pssver}/README README.pysol-sound-server
