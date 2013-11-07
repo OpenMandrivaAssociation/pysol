@@ -1,6 +1,6 @@
 diff -Naur pysol-4.82.orig/src/tk/statusbar.py pysol-4.82/src/tk/statusbar.py
---- pysol-4.82.orig/src/tk/statusbar.py	2013-10-21 14:25:24.815252881 +0400
-+++ pysol-4.82/src/tk/statusbar.py	2013-10-21 14:25:36.776773128 +0400
+--- ./pysol-4.82.orig/src/tk/statusbar.py	2013-10-21 14:25:24.815252881 +0400
++++ ./pysol-4.82/src/tk/statusbar.py	2013-10-21 14:25:36.776773128 +0400
 @@ -147,10 +147,10 @@
          l = self._createLabel("info", fill=Tkinter.X, expand=0)
          ## FIXME: justify ?

@@ -1,5 +1,5 @@
---- pysol-4.82/src/tk/soundoptionsdialog.py.orig	2004-12-04 15:33:34.218987696 +0200
-+++ pysol-4.82/src/tk/soundoptionsdialog.py	2004-12-04 15:29:08.306412552 +0200
+--- ./pysol-4.82/src/tk/soundoptionsdialog.py.orig	2004-12-04 15:33:34.218987696 +0200
++++ ./pysol-4.82/src/tk/soundoptionsdialog.py	2004-12-04 15:29:08.306412552 +0200
 @@ -47,6 +47,11 @@
  from tkconst import EVENT_HANDLED, EVENT_PROPAGATE
  from tkwidget import _ToplevelDialog, MfxDialog
