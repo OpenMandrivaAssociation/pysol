@@ -15,7 +15,8 @@ Source2:	%name-%version-src.tar.bz2
 Patch:		pysol-4.81-srcrelease.patch
 Patch1:		pysol-4.82-sound.patch
 Requires:	tkinter >= 1.5.2
-%py_requires -d
+BuildRequires:	pkgconfig(python-2.7)
+#%py_requires -d
 BuildRequires:  smpeg-devel
 
 %description
@@ -137,26 +138,26 @@ EOF
 - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
 
 
-* Tue Nov 28 2006 GÃ¶tz Waschk <waschk@mandriva.org> 4.82-8mdv2007.0
+* Tue Nov 28 2006 GÃƒÂ¶tz Waschk <waschk@mandriva.org> 4.82-8mdv2007.0
 + Revision: 88188
 - Import pysol
 
-* Tue Nov 28 2006 Götz Waschk <waschk@mandriva.org> 4.82-8mdv2007.1
+* Tue Nov 28 2006 GÃ¶tz Waschk <waschk@mandriva.org> 4.82-8mdv2007.1
 - update file list
 
-* Wed Aug 02 2006 Götz Waschk <waschk@mandriva.org> 4.82-7mdv2007.0
+* Wed Aug 02 2006 GÃ¶tz Waschk <waschk@mandriva.org> 4.82-7mdv2007.0
 - xdg menu
 
 * Sun Jan 01 2006 Mandriva Linux Team <http://www.mandrivaexpert.com/> 4.82-6mdk
 - Rebuild
 
-* Wed Apr 27 2005 Götz Waschk <waschk@mandriva.org> 4.82-5mdk
+* Wed Apr 27 2005 GÃ¶tz Waschk <waschk@mandriva.org> 4.82-5mdk
 - update the pysol sound server to 3.01
 
-* Mon Mar 21 2005 Nicolas Lécureuil <neoclust@mandrake.org> 4.82-4mdk
+* Mon Mar 21 2005 Nicolas LÃ©cureuil <neoclust@mandrake.org> 4.82-4mdk
 - Fix Spec files (Bug #12763) Thanks to hlomi Fish
 
-* Sun Dec 05 2004 Götz Waschk <waschk@linux-mandrake.com> 4.82-3mdk
+* Sun Dec 05 2004 GÃ¶tz Waschk <waschk@linux-mandrake.com> 4.82-3mdk
 - patch bug 12578
 - use the source, there's no python 2.4 bytecode available
 
