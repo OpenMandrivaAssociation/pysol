@@ -75,6 +75,8 @@ StartupNotify=true
 Categories=X-MandrivaLinux-MoreApplications-Games-Cards;Game;CardGame;
 EOF
 
+chmod +x %{buildroot}%{_gamesdatadir}/%{name}/BINARIES/pysol.py
+
 %files
 %doc NEWS* README*
 %{_gamesdatadir}/pysol/
