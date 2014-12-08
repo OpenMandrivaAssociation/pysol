@@ -15,7 +15,7 @@ Patch0:		pysol-4.81-srcrelease.patch
 Patch1:		pysol-4.82-sound.patch
 Patch2:		pysol-4.82-tk-geometry-fix.patch
 BuildRequires:	smpeg-devel
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 Requires:	tkinter >= 1.5.2
 
 %description
@@ -32,6 +32,7 @@ cp pysol-sound-server-%{pssver}/NEWS NEWS.pysol-sound-server
 cp pysol-sound-server-%{pssver}/README README.pysol-sound-server
 
 %build
+export PYTHON=%{__python2}
 cd pysol-sound-server-%{pssver}/src
 ./configure --libdir=%{_libdir}
 %make
@@ -83,5 +84,5 @@ EOF
 %{_gamesbindir}/pysol
 %{_mandir}/man6/pysol.6*
 %_datadir/applications/mandriva*
-%{py_platsitedir}/*
+%{py2_platsitedir}/*
 
