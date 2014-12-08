@@ -49,7 +49,7 @@ make \
 	mandir=%{buildroot}/%{_mandir}
 perl -pi -e "s%%{buildroot}/usr%/usr%" %{buildroot}%{_gamesbindir}/pysol
 cd pysol-sound-server-%{pssver}/src
-python setup.py install --root=%{buildroot}
+%{__python2} setup.py install --root=%{buildroot}
 cd ../..
 # they don't support python 2.4 yet
 rm -f %{buildroot}%{_gamesdatadir}/%{name}/*pyc
@@ -57,7 +57,7 @@ mkdir %{buildroot}%{_gamesdatadir}/%{name}/BINARIES
 cp -r %{name}-%{version}/src/* %{buildroot}%{_gamesdatadir}/%{name}/BINARIES
 cat > %{buildroot}/%{_gamesbindir}/pysol << EOF
 #!/bin/sh
-exec python %{_gamesdatadir}/%{name}/BINARIES/pysol.py --pkgdatadir=%{_gamesdatadir}/%{name}/ --bindir=%{_gamesdatadir}/%{name}/BINARIES/ ${1+"$@"}
+exec %{__python2} %{_gamesdatadir}/%{name}/BINARIES/pysol.py --pkgdatadir=%{_gamesdatadir}/%{name}/ --bindir=%{_gamesdatadir}/%{name}/BINARIES/ ${1+"$@"}
 
 echo "$0:	running $PYTHON failed !"
 exit 1
@@ -83,6 +83,6 @@ EOF
 %{_gamesdatadir}/pysol/
 %{_gamesbindir}/pysol
 %{_mandir}/man6/pysol.6*
-%_datadir/applications/mandriva*
+%{_datadir}/applications/mandriva*
 %{py2_platsitedir}/*
 
