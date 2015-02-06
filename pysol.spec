@@ -35,7 +35,7 @@ cp pysol-sound-server-%{pssver}/README README.pysol-sound-server
 export PYTHON=%{__python2}
 cd pysol-sound-server-%{pssver}/src
 ./configure --libdir=%{_libdir}
-%make
+%make PYTHON=%__python2
 
 
 %install
