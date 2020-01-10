@@ -26,7 +26,7 @@ Contains:	klondike, freecel, spider, golf, etc.
 
 %prep
 %setup -q -a 1 -a 2
-%apply_patches
+%autopatch -p1
 
 cp pysol-sound-server-%{pssver}/NEWS NEWS.pysol-sound-server
 cp pysol-sound-server-%{pssver}/README README.pysol-sound-server
