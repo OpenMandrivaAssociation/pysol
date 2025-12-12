@@ -3,7 +3,7 @@
 Summary:	Provides several solitaire card games
 Name:		pysol
 Version:	3.0.0
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		Games/Cards
 # Discontinued original version http://www.oberhumer.com/opensource/pysol/
