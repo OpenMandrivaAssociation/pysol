@@ -2,14 +2,14 @@
 
 Summary:	Provides several solitaire card games
 Name:		pysol
-Version:	3.0.0
-Release:	2
+Version:	3.4.1
+Release:	1
 License:	GPLv2
 Group:		Games/Cards
 # Discontinued original version http://www.oberhumer.com/opensource/pysol/
 Url:		https://pysolfc.sourceforge.io/
 Source0:	https://downloads.sourceforge.net/project/pysolfc/PySolFC/PySolFC-%{version}/PySolFC-%{version}.tar.xz
-Source1:	https://downloads.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-3.0/PySolFC-Cardsets-3.0.tar.bz2
+Source1:	https://downloads.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-3.1/PySolFC-Cardsets-3.1.tar.bz2
 BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python%{pyver}dist(setuptools)
